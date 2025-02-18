@@ -115,7 +115,9 @@ private CoverBehavior deserializeCoverUid(CompoundTag uid) {
 ```
 
 `onDirtyMethod`: if this field has changes.
+
 `serializeMethod`: get a unique id of this field.
+
 `deserializeMethod`: if field's unique id changed / set from `null` to instance. create a new instance for it.
 
 For example, `CoverBehavior` above is a calss inherit `IManaged`(so sync annotations in CoverBehavior also works). but it's constructor need to pass `BlockEntity` into it, so SyncData system couldn't help create its instance. we can use this way to address it.

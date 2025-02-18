@@ -6,7 +6,7 @@ Original project can be found here: [**Multiblocked**](https://www.curseforge.co
 
 :simple-discord: Discord: [https://discord.com/invite/sDdf2yD9bh](https://discord.com/invite/sDdf2yD9bh)
 
-Github:  [https://github.com/Low-Drag-MC/Multiblocked2](https://github.com/Low-Drag-MC/Multiblocked2)
+:simple-github: Github:  [https://github.com/Low-Drag-MC/Multiblocked2](https://github.com/Low-Drag-MC/Multiblocked2)
 
 ## Compatibility
 

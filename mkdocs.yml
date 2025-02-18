@@ -1,10 +1,16 @@
 site_name: LowDragMC
+copyright: Copyright &copy; 2019 - 2025 KilaBash
 site_url: https://github.com/Low-Drag-MC
+repo_url: https://github.com/Low-Drag-MC
+repo_name: Low-Drag-MC
 theme:
   name: material
+  logo: assets/icon.png
+  icon:
+    favicon: assets/icon.png
+    touchicon: assets/icon.png
+  language: en 
   pygments_style: friendly
-  palette:
-    primary: indigo
   features:
     - navigation.instant
     - navigation.instant.prefetch
@@ -17,10 +23,36 @@ theme:
     - content.code.select
     - content.code.annotate
     - content.tabs.link
+    - search.suggest
+    - search.highlight
+  palette: 
+    # Palette toggle for light mode
+    - scheme: default
+      primary: deep purple
+      toggle:
+        icon: material/brightness-7 
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: deep purple
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+extra:
+  generator: false
+  alternate:
+    - name: English
+      link: /en/ 
+      lang: en
+    # - name: 中文
+    #   link: /zh/
+    #   lang: zh
 extra_css:
   - css/custom.css
 plugins:
   - tags
+  - search
 markdown_extensions:
   - attr_list
   - pymdownx.emoji:
@@ -37,17 +69,30 @@ markdown_extensions:
       alternate_style: true
 nav:
   - Home: index.md
-  - Ldlib: 
-     - ldlib/index.md
-     - ldlib/java_integration.md
-     - Sync Data:
-        - ldlib/SyncData/setup.md
-        - ldlib/SyncData/Anotations.md
-  - Multiblocked2: 
-     - multiblocked2/index.md
-     - multiblocked2/java_integration.md
-     - KubeJS Integration:
-        - multiblocked2/KubeJS/recipe.md
-        - multiblocked2/KubeJS/event.md
+  - Ldlib:
+      - ldlib/index.md
+      - ldlib/java_integration.md
+      - Sync Data:
+          - ldlib/SyncData/index.md
+          - ldlib/SyncData/Anotations.md
+          - ldlib/SyncData/type.md
+      - UI:
+          - ldlib/ui/index.md
+          - UI Editor:
+              - ldlib/ui/ui_editor/index.md
+              - ldlib/ui/ui_editor/resource.md
+              - ldlib/ui/ui_editor/group_widget.md
+          - Java / KubeJS:
+              - ldlib/ui/code/index.md
+      - Compass:
+          - ldlib/compass/index.md
+          - ldlib/compass/xml.md
+          - ldlib/compass/scene.md
+  - Multiblocked2:
+      - multiblocked2/index.md
+      - multiblocked2/java_integration.md
+      - KubeJS Integration:
+          - multiblocked2/KubeJS/recipe.md
+          - multiblocked2/KubeJS/event.md
   - Photon:
-     - photon/index.md
+      - photon/index.md
