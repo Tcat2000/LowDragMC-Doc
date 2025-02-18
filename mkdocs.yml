@@ -16,7 +16,6 @@ theme:
     - navigation.instant.prefetch
     - navigation.instant.progress
     - navigation.sections
-    - navigation.expand
     - navigation.path
     - navigation.tabs
     - content.code.copy
