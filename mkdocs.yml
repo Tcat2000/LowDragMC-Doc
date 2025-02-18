@@ -1,0 +1,53 @@
+site_name: LowDragMC
+site_url: https://github.com/Low-Drag-MC
+theme:
+  name: material
+  pygments_style: friendly
+  palette:
+    primary: indigo
+  features:
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.progress
+    - navigation.sections
+    - navigation.expand
+    - navigation.path
+    - navigation.tabs
+    - content.code.copy
+    - content.code.select
+    - content.code.annotate
+    - content.tabs.link
+extra_css:
+  - css/custom.css
+plugins:
+  - tags
+markdown_extensions:
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+nav:
+  - Home: index.md
+  - Ldlib: 
+     - ldlib/index.md
+     - ldlib/java_integration.md
+     - Sync Data:
+        - ldlib/SyncData/setup.md
+        - ldlib/SyncData/Anotations.md
+  - Multiblocked2: 
+     - multiblocked2/index.md
+     - multiblocked2/java_integration.md
+     - KubeJS Integration:
+        - multiblocked2/KubeJS/recipe.md
+        - multiblocked2/KubeJS/event.md
+  - Photon:
+     - photon/index.md
