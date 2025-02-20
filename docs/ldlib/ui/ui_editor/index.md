@@ -1,5 +1,5 @@
 # Get Start
-The UI Editor is a powerful built-in visual editor provided by ldlib. You can use it to easily design your UI, use it in your own mods, or use it through KJS.
+The UI Editor is a powerful built-in visual editor provided by ldlib. You can use it to easily design your UI, use it in your own mods, or use it through [Java / KubeJS](../code/load_ui_file.md).
 
 ## 1. Get Start 
 
