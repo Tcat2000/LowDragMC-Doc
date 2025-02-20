@@ -1,3 +1,3 @@
 mkdocs-material
 mkdocs-awesome-pages-plugin
-glightbox
+mkdocs-glightbox
