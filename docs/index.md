@@ -1,5 +1,8 @@
 # LowDragMC
 
+!!! info inline end "Profile"
+    ![Profile](assets/profile.png){ width="105%"}
+
 LowDragMC is not an active team, but rather a collection of various interesting mod projects.  
 
 The sole maintainer of these projects is **[KilaBash](https://github.com/Yefancy) :)**  

@@ -35,14 +35,33 @@ Associates the widget with an inventory container by specifying the slot index. 
 
 ### setHandlerSlot
 
-Configures the widget to use an item transfer handler with the specified slot index. Because Forge and Fabric has different APIs, you need to convert each handler into the LDLib one, which can be found in `ItemTransferHelperImpl`.
+Configures the widget to use an item transfer handler with the specified slot index. 
+
+!!! note "For Java User !!!"
+    If you want to use the handler of `ItemStackHandler`(from forge) or `Storage<ItemVariant>`(from fabric), you need one more line. Because Forge and Fabric has different APIs, you need to convert the handler into the LDLib one, which can be found in `ItemTransferHelperImpl`.
+
+    KubeJS user do not need to do such mess. We have already convert them into a item transfer internal already.
+
+    === "Forge"
+
+        ``` java
+        var itemHandler = ...;
+        var itemTransfer = ItemTransferHelperImpl.toItemTransfer(itemHandler);
+        ```
+
+    === "Fabric"
+
+        ``` java
+        var storage = ...;
+        var itemTransfer = ItemTransferHelperImpl.toItemTransfer(storage);
+        ```
 
 #### Forge
 
 === "Java / KubeJS"
 
     ``` java
-    slotWidget.setHandlerSlot(itemHandler, 0);
+    slotWidget.setHandlerSlot(itenTransfer, 0);
     ```
 
 ---
