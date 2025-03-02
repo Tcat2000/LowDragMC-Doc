@@ -19,8 +19,8 @@ ServerEvents.recipes((event) => {
         .inputItems("minecraft:apple", "4x minecraft:oak_log")
         .outputItems("4x minecraft:apple")
         // fluid
-        .inputFluids("1000x water")
-        .outputFluids("2000x lava")
+        .inputFluids("water 1000")
+        .outputFluids("lava 2000")
         // forge energy
         .inputFE(1000)
         .outputFE(2000)

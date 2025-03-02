@@ -37,10 +37,10 @@ Associates the widget with an inventory container by specifying the slot index. 
 
 Configures the widget to use an item transfer handler with the specified slot index. 
 
+#### Java
+
 !!! note "For Java User !!!"
     If you want to use the handler of `ItemStackHandler`(from forge) or `Storage<ItemVariant>`(from fabric), you need one more line. Because Forge and Fabric has different APIs, you need to convert the handler into the LDLib one, which can be found in `ItemTransferHelperImpl`.
-
-    KubeJS user do not need to do such mess. We have already convert them into a item transfer internal already.
 
     === "Forge"
 
@@ -56,12 +56,14 @@ Configures the widget to use an item transfer handler with the specified slot in
         var itemTransfer = ItemTransferHelperImpl.toItemTransfer(storage);
         ```
 
-#### Forge
+#### KubeJS
 
-=== "Java / KubeJS"
+KubeJS user do not need to do such mess. We have already convert them into a item transfer internal already.
 
-    ``` java
-    slotWidget.setHandlerSlot(itenTransfer, 0);
+=== "KubeJS"
+
+    ``` javascript
+    slotWidget.setHandlerSlot(itemTransfer, 0);
     ```
 
 ---
@@ -73,8 +75,8 @@ Set the internal itemstack with/without notify.
 === "Java / KubeJS"
 
     ``` java
-    slotWidget.setItem(item); // it will also trigger the listen you set
-    slotWidget.setItem(item, false); // it wont trigger the listen
+    slotWidget.setItem(itemstack); // it will also trigger the listen you set
+    slotWidget.setItem(itemstack, false); // it wont trigger the listen
     ```
 
 ---
@@ -86,7 +88,7 @@ Get the internal itemstack stored.
 === "Java / KubeJS"
 
     ``` java
-    var item = slotWidget.getItem(item);
+    var itemstack = slotWidget.getItem();
     ```
 ---
 
