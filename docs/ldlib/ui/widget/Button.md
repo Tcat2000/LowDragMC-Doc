@@ -1,5 +1,9 @@
 # ButtonWidget
 
+![Image title](../assets/button.png){ width="30%" align=right }
+
+The ButtonWidget is a UI widget representing a clickable button in the GUI system
+
 ## Basic properties
 
 All properties can be accessed via Java / KubeJS.

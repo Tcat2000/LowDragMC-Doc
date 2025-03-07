@@ -1,5 +1,7 @@
 # ImageWidget
 
+![Image title](../assets/image.png){ width="30%" align=right }
+
 `ImageWidget` is used to display images, which provided by a [`GUI Texture`](../textures.md).
 
 ## Basic Properties
@@ -57,12 +59,14 @@ Returns the current image texture.
 
 ### setBorder
 
+![Image title](../assets/image_border.png){ width="20%" align=right }
+
 Sets the border width and color.
 
 === "Java / KubeJS"
 
     ``` java
-    imageWidget.setBorder(5, 0xFFFFFFFF); // ARGB
+    imageWidget.setBorder(2, 0xFFFFFFFF); // ARGB
     ```
 
 ---

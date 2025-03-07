@@ -1,5 +1,8 @@
 # SlotWidget
 
+![Image title](../assets/slot.png){ width="30%" align=right }
+
+
 The `SlotWidget` represents an interactive item slot within a container GUI. This widget supports configurable properties such as whether items can be taken or placed, customizable hover overlays and tooltips, and integration with JEI/REI/EMI systems for displaying ingredient details. It can be configured to represent a slot in either a standard inventory container or via an item transfer handler.
 
 !!! note

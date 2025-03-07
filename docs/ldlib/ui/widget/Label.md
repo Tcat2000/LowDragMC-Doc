@@ -1,5 +1,7 @@
 # LabelWidget
 
+![Image title](../assets/label.png){ width="30%" align=right }
+
 `LabelWidget` is used to display text and component.
 
 !!! note "Advanced Widget"

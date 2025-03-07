@@ -1,6 +1,14 @@
 
 # TextFieldWidget
 
+<div>
+  <video width="50%" controls style="margin-left: 20px; float: right;">
+    <source src="../../assets/textfield.mp4" type="video/mp4">
+    Your browser does not support video.
+  </video>
+</div>
+
+
 The `TextFieldWidget` provides an editable text field for GUI interfaces. It supports dynamic text updates via a supplier and responder, validation through custom validators, and configurable properties such as maximum string length, border style, and text color.
 
 ## Basic Properties
@@ -121,16 +129,18 @@ Restricts input to valid resource locations. Displays a tooltip indicating the r
 
 Restricts input to numeric values. Overloads are available for different numeric types.
 
-=== "Java / KubeJS" (for int values)
+=== "Java"
 
     ``` java
-    textFieldWidget.setNumbersOnly(0, 100);
+    textFieldWidget.setNumbersOnly(0, 100); // int
+    textFieldWidget.setNumbersOnly(0.0f, 1.0f); // float
     ```
 
-=== "Java / KubeJS" (for float values)
+=== "KubeJS"
 
     ``` java
-    textFieldWidget.setNumbersOnly(0.0f, 1.0f);
+    textFieldWidget.setNumbersOnlyInt(0, 100); // int
+    textFieldWidget.setNumbersOnlyFloat(0, 100); // float
     ```
 
 ---

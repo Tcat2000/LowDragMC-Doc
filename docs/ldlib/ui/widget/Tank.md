@@ -1,5 +1,7 @@
 # TankWidget
 
+![Image title](../assets/tank.png){ width="30%" align=right }
+
 The `TankWidget` represents a fluid slot widget within a container GUI. It displays a fluid in a designated tank and supports fluid interactions such as filling and emptying. In addition, it integrates with external systems (JEI/REI/EMI) to show fluid ingredient details and provides configurable options for hover overlays, tooltips, and click behavior.
 
 ## Basic Properties

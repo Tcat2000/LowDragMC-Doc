@@ -67,7 +67,7 @@ Sets the text using a Component.
 
 ---
 
-### `setText`
+### `setText / setTextProvider`
 
 Sets the text using a Supplier.
 
@@ -80,5 +80,5 @@ Sets the text using a Supplier.
 === "KubeJS"
 
     ``` javascript
-    textTextureWidget.setText(() => "dynamic text");
+    textTextureWidget.setTextProvider(() => Component.string("dynamic text"));
     ```
