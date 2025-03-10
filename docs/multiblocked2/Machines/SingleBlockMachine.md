@@ -1,4 +1,4 @@
-# Info
+# Single Block Machine
 
 Single block machines are machines that do not require a structure to become formed.
 They can operate as a self-contained machine, or as a part in a multiblock, allowing for more advanced multiblocks.
@@ -19,14 +19,14 @@ changes the render type(s) of your block, each type having different levels of r
     [does this matter with geckolib render? what does having multiple selected do?]
 <details>
     <summary>Example image of mipmaps at work, right is with mipmaps. (source minecraft.wiki)</summary>
-    <img src="https://minecraft.wiki/images/thumb/Mipmap_comparison_re.png/1031px-Mipmap_comparison_re.png?c2e1d">
+    <img src="https://minecraft.wiki/images/thumb/Mipmap_comparison_re.png/1031px-Mipmap_comparison_re.png?c2e1d" alt="Side by side of how mipmaps smooth noise in distant textures.">
 </details>
 
 ### Use AO (ambient occlusion):
 AO is the darkening around corners of blocks.
 <details>
     <summary>Ambient Occlusion at work</summary>
-    <img src="assets/smooth_lighting_compressed.png">
+    <img src="assets/smooth_lighting_compressed.png" alt="Shows side by side of smooth lighting applying AO to stone.">
 </details>
 
 ### Rotation State
@@ -119,7 +119,7 @@ Interval (ticks) is how often it will push/pull.
 </details>
 </details>
 
-Also see #MachineStateRenderer
-Also see #MachineTraits
-Also see #MachineEvents
-Also see #MachineUI
+Also see #[MachineStateRenderer](MachineStateRenderer.md) <br>
+Also see #MachineTraits <br>
+Also see #MachineEvents <br>
+Also see #MachineUI <br>
