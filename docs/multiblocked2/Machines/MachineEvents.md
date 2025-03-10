@@ -1,10 +1,11 @@
-#Machine Events
+# Machine Events
 
 Machine Events are events that all called when at various times when things in the machine change, like a state, or a recipe starts or stops.<br>
 Machine Events can be listened to in 2 ways, with the builtin node graph, or with external KubeJS scripts. Both will be covered here
 
 # Machine Event List
-
+<details>
+<summary>List of all Machine Events</summary>
 ### On Recipe Working Event
 Runs every tick when the machine is processing a recipe.
 
@@ -81,6 +82,7 @@ Triggers when the structure forms.
 
 ### Multiblock Use Catalyst Event
 Triggered before the structure is formed by a catalyst is used on the controller. Allows custom catalyst detection logic.
+</details>
 
 # The Node Graph
 
