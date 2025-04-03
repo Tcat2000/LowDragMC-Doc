@@ -82,3 +82,29 @@ ServerEvents.recipes((event) => {
 ```
 
 More apis and details can be found here: [MBDRecipeSchema](https://github.com/Low-Drag-MC/Multiblocked2/blob/1.20.1/src/main/java/com/lowdragmc/mbd2/integration/kubejs/recipe/MBDRecipeSchema.java)
+
+## Create dynamic recipes via KubeJS recipe builder
+
+You can dynamically modify recipes by using the `onBeforeRecipeModify` event to apply a modifier and replace the original recipe. In most cases, this approach is sufficient. 
+However, there are times when you may want more flexibility—such as removing, replacing, or appending ingredients. To support this, we offer an alternative method that allows you to define recipes in a way similar to KJS recipe events.
+![alt text](../assets/capability_names.png)
+```js
+MBDMachineEvents.onBeforeRecipeModify('machine:id', (event) => {
+    const mbdEvent = event.getEvent();
+    const { machine, recipe } = mbdEvent;
+    
+    // creat an empty builder
+    // let newEmptyRecipeBuilder = recipe.recipeType.recipeBuilder();
+    // create a builder with current recipe
+    let builder = recipe.toBuilder();
+
+    builder.duration(412) // modify duration
+    builder.inputItems("apple") // append ingredient
+    
+    let fluidCap = MBDRegistries.RECIPE_CAPABILITIES.get("fluid")
+    builder.removeOutputs(fluidCap) // remove all output fluid ingredients
+
+    let newRecipe = builder.buildMBDRecipe();
+    mbdEvent.setRecipe(newRecipe );
+});
+```

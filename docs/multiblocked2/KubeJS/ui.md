@@ -83,3 +83,11 @@ Let's see our final result!
 </div>
 
 We only use four widgets here (`TextTexture`, `Button`, `Slot`, and `Tank`). For more details about other widgets please check [pages](../../ldlib/ui/widget/index.md).
+
+
+## Display part's trait ui in the Controller / Display controller's trait ui in the Part
+MBD2 supports proxy capabilities, allowing you to use a part to proxy the capabilities of a controller. However, you might also want to display the UI of a trait defined in the controller within the part, or vice versa—display a trait from a part in the controller’s UI. This is possible, but it requires some additional setup.
+
+For example, suppose your part has an item trait named `item_slot` with only one slot. Its UI ID would be `ui:item_slot_0`. To display it in the controller’s UI, you need to manually add an item slot widget to the controller UI and set its ID to `part:item_slot@ui:item_slot_0`.
+
+Similarly, let’s say your controller has a PneumaticCraft air trait named `air_handler`. To display it in the part's UI, you need to manually add a progress bar widget (you can also temporarily add a trait to auto-generate the UI, then remove the trait), and set the widget's ID to `controller:air_handler@ui:air_handler`.
