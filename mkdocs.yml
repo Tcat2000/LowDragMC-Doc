@@ -52,12 +52,15 @@ extra_css:
   - css/custom.css
 plugins:
   - search
-  - awesome-pages
+  - macros
   - glightbox
+  - tags
+  - awesome-pages
 markdown_extensions:
   - attr_list
   - tables
   - md_in_html
+  - pymdownx.emoji
   - pymdownx.blocks.caption
   - admonition
   - pymdownx.details

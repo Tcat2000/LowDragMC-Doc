@@ -61,14 +61,35 @@ public void onRegisterMachine(MBDRegistryEvent.Machine event) {
 }
 ```
 
-### 2. Register machine project files from your mod resource assets
+### 2. Register project files from your mod resource assets
 For example, you have such projects in your resource assets like this.
 
 <img width="280" alt="image" src="https://github.com/user-attachments/assets/6ba5b196-cb83-4055-9788-db9960e05644">
 
+## Register Machine Project 
+
+event.registerFromResource(`mod class`, `project type`, `project resource`)
+
+Available `project types` are below:
+
+* single machine project: `single_machine`
+* multiblock machine project: `multiblock`
+* create kinematic machien project: `create_machine`
+
 ```java
 @SubscribeEvent
 public void onRegisterMachine(MBDRegistryEvent.Machine event) {
-    event.registerFromResource(this.getClass(), "mbd2/machine/machine_project_file.sm");
+    event.registerFromResource(this.getClass(), "single_machine", "mbd2/machine/machine_project_file.sm");
+}
+```
+
+## Register Recipe Type Project 
+
+event.registerFromResource(`mod class`, `project resource`)
+
+```java
+@SubscribeEvent
+public void onRegisterRecipeType(MBDRegistryEvent.MBDRecipeType event) {
+    event.registerFromResource(this.getClass(), "mbd2/recipe_type/recipe_type_file.rt");
 }
 ```
