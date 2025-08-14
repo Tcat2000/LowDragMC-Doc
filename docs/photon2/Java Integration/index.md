@@ -1,4 +1,4 @@
-#Basic Inforamtion
+#Basic Information
 
 {{ version_badge("2.0.4", label="Since", icon="tag", href="/changelog/#2.0.4") }}
 
