@@ -224,6 +224,7 @@ Use:
   ```glsl
   #moj_import <photon:particle_utils.glsl>
   ```
+  
 * Call `getCurveValue()` and `getGradientValue()` to retrieve values.
 
 ---
