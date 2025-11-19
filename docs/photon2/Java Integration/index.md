@@ -5,7 +5,7 @@
 ## Development Maven
 ```gradle
 repositories {
-    maven { url = "https://maven.firstdarkdev.xyz/snapshots" } // LDLib2, Photon2
+    maven { url = "https://maven.firstdark.dev/snapshots" } // LDLib2, Photon2
 }
 
 dependencies {
@@ -19,11 +19,11 @@ dependencies {
 ```
 ### latest version
 [![ldlib2 maven](https://img.shields.io/badge/dynamic/xml
-?url=https%3A%2F%2Fmaven.firstdarkdev.xyz%2Fsnapshots%2Fcom%2Flowdragmc%2Fldlib2%2Fldlib2-neoforge-1.21.1%2Fmaven-metadata.xml
+?url=https%3A%2F%2Fmaven.firstdark.dev%2Fsnapshots%2Fcom%2Flowdragmc%2Fldlib2%2Fldlib2-neoforge-1.21.1%2Fmaven-metadata.xml
 &query=%2F%2Fmetadata%2Fversioning%2Flatest
 &label=ldlib2-neoforge-1.21.1
-&cacheSeconds=300)](https://maven.firstdarkdev.xyz/#/snapshots/com/lowdragmc/ldlib2/ldlib2-neoforge-1.21.1)
-[![photon maven](https://img.shields.io/badge/dynamic/xml?url=https%3A%2F%2Fmaven.firstdarkdev.xyz%2Fsnapshots%2Fcom%2Flowdragmc%2Fphoton%2Fphoton-neoforge-1.21.1%2Fmaven-metadata.xml&query=%2F%2Fmetadata%2Fversioning%2Flatest&label=photon-neoforge-1.21.1&cacheSeconds=300)](https://maven.firstdarkdev.xyz/#/snapshots/com/lowdragmc/photon/photon-neoforge-1.21.1)
+&cacheSeconds=300)](https://maven.firstdar.kdev/#/snapshots/com/lowdragmc/ldlib2/ldlib2-neoforge-1.21.1)
+[![photon maven](https://img.shields.io/badge/dynamic/xml?url=https%3A%2F%2Fmaven.firstdark.dev%2Fsnapshots%2Fcom%2Flowdragmc%2Fphoton%2Fphoton-neoforge-1.21.1%2Fmaven-metadata.xml&query=%2F%2Fmetadata%2Fversioning%2Flatest&label=photon-neoforge-1.21.1&cacheSeconds=300)](https://maven.firstdark.dev/#/snapshots/com/lowdragmc/photon/photon-neoforge-1.21.1)
 
 ---
 
