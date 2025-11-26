@@ -3,7 +3,7 @@
 {{ version_badge("2.0.4", label="Since", icon="tag", href="/changelog/#2.0.4") }}
 
 ## Development Maven
-```gradle
+```c
 repositories {
     maven { url = "https://maven.firstdark.dev/snapshots" } // LDLib2, Photon2
 }
