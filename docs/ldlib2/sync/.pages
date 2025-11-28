@@ -1,1 +1,6 @@
-title: Synchronism and Persistence
+title: Synchronization and Persistence
+nav:
+  - index.md
+  - annotations.md
+  - types.md
+  - ...

@@ -127,22 +127,9 @@ Below is a minimal example showing how much code you would normally write betwee
     ```
 === "✅ With LDLib2"
     ```java
-    public class ExampleBE extends BlockEntity implements IBlockEntityManaged, IManagedBlockEntity {
-        // setup
-        protected static final ManagedFieldHolder MANAGED_FIELD_HOLDER = new ManagedFieldHolder(ExampleBE.class);
-       
+    public class ExampleBE extends BlockEntity implements ISyncPersistRPCBlockEntity {
         @Getter
         private final FieldManagedStorage syncStorage = new FieldManagedStorage(this);
-
-        @Override
-        public IManagedStorage getRootStorage() {
-            return getSyncStorage();
-        }
-
-        @Override
-        public ManagedFieldHolder getFieldHolder() {
-            return MANAGED_FIELD_HOLDER;
-        }
 
         // your fields
         @Persisted
@@ -342,8 +329,3 @@ By implementing `IPersistedSerializable`, your class gains:
 - automatic NBT serialization  
 - automatic NBT deserialization  
 - full compatibility with any system expecting `INBTSerializable`  
-
-And the best part:
-
-> You do not need to write **a single line** of custom NBT read/write code.  
-> LDLib2 manages it entirely based on your annotations.
