@@ -3,4 +3,5 @@ nav:
   - index.md
   - annotations.md
   - types.md
+  - PersistedParser.md
   - ...

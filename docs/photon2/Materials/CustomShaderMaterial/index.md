@@ -20,7 +20,7 @@ Photon2 allows you to write materials using [Minecraft Core Shaders](https://min
     - [Post-processing Shaders](https://minecraft.fandom.com/wiki/Shaders#Post-processing_shaders)
     - [Learn OpenGL](https://learnopengl.com/Introduction)
 
-Photon2 and Ldlib2 extend **Vanilla Minecraft Shader** via [ExtendedShader](ExtendedShader.md).  
+Photon2 and LDLib2 extend **Vanilla Minecraft Shader** via [ExtendedShader](ExtendedShader.md).  
 This extension adds:
 
 - Geometry shader (`attach`) support

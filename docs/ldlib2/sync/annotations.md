@@ -1,6 +1,21 @@
 # Anotations
+{{ version_badge("2.1.0", label="Since", icon="tag") }}
 
 We show all anotations and their usage in this page.
+
+!!! note "LDLib Dev Tool"
+    ![Image title](../assets/plugin.png){ width="60%" align=right}
+
+    If you are going to develop with LDLib2, we strongly recommend you to install our IDEA Plugin [LDLib Dev Tool](https://plugins.jetbrains.com/plugin/28032-ldlib-dev-tool). 
+    The plugin has:
+
+    - code highlight
+    - syntax check
+    - cdoe jumping
+    - auto complete
+    - others
+    
+    which greatly assist you in utilizing features of LDLib2. Especially, all the annotations of LDLib2 have been supported for use.
 
 ## Common Annotations
 
@@ -42,7 +57,7 @@ its nbt/json looks as below:
 
 `boolean subPersisted()` If true, it will wrap the field's internal value based on its `non-null` instance.
 
-It is very useful for `final` instance which doesn't allow new instance creation. If the filed set `subPersisted = true`, Ldlib2 will do:
+It is very useful for `final` instance which doesn't allow new instance creation. If the filed set `subPersisted = true`, LDLib2 will do:
 
 - if the field inherits from `INBTSerializable<?>`, it will try to use its api for serialization.
 - otherwise, it will serialize the field's internal values and wrap it as a map.
@@ -159,13 +174,13 @@ flowchart LR
     S -- Yes --> U --> Z
 ```
 
-1. To check if a `read-only` field has internal changes, Ldlib2 will first check if unique id is equal to previous snapshot. 
+1. To check if a `read-only` field has internal changes, LDLib2 will first check if unique id is equal to previous snapshot. 
     - If `not`, mark this field as dirty, and store the latest snapshot.
     - If `true`, go to step 2.
 2. Check if the the value is dirty compared with previous snapshot.
-    - if `onDirtyMethod` is not set, Ldlib2 will check dirty according to the registered `read-only` type.
+    - if `onDirtyMethod` is not set, LDLib2 will check dirty according to the registered `read-only` type.
     - if `true`, use customized method to check if dirty.
-3. If the field is dirty. Ldlib2 will sync both uid and value data and ask remote (client) to update value.
+3. If the field is dirty. LDLib2 will sync both uid and value data and ask remote (client) to update value.
 4. While the remote receive the changes, it will check uid first. 
     - if not equal, create a new instance based on `deserializeMethod` first.
     - then update value based on registered `read-only` type.
@@ -208,7 +223,7 @@ public List<TestGroup> testGroupDeserialize(IntTag tag) {
 Annotate a method, you can send RPC packet between server and remote. You are free to define the parameters of the methods long as the parameters support sync, and send rpc anywhere in your class.
 It is useful to spread an event (`c->s` / `s->c`).
 !!! note
-    if the `RPCSender` is defined as your first parameter of your method. Ldlib2 will provide the sender information.
+    if the `RPCSender` is defined as your first parameter of your method. LDLib2 will provide the sender information.
 
 Make sure that all args match the parameters of annotated method.
 
@@ -282,7 +297,7 @@ private void onIntValueChanged(int oldValue, int newValue) {
 In general, all fields annotated with `@Persisted` will be serialized during persistence. 
 However, you may want to skip serialization, e.g., reduce output size, skip unchanged value, etc.
 
-Ldlib2 provide this annotation allow you to fine-grained control whether the field should be serialized.
+LDLib2 provide this annotation allow you to fine-grained control whether the field should be serialized.
 
 ```java
 @Persisted

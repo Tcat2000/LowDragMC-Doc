@@ -8,8 +8,7 @@ Whether you are working with:
 - **Block Entities**  
 - **Entities**  
 - **Screens / GUIs**  
-- **Custom containers**  
-- **Any object that stores game state**  
+- **Any object that you want**  
 
 ...you will always face the same three questions:
 
@@ -66,7 +65,7 @@ The goal is simple:
     Declare what a field *is* —  
     LDLib2 handles how it is synced and saved.
 
-Below is a minimal example showing how much code you would normally write between `Vanilla (forge)` and `Ldlib2`. 
+Below is a minimal example showing how much code you would normally write between `Vanilla (forge)` and `LDLib2`. 
 
 (click the tab to switch code)
 
