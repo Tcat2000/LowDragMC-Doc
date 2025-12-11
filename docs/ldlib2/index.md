@@ -26,8 +26,8 @@ Provides more stable and stable integration for mainstream mods such as JEI, Kub
 
 ## Core Modules
 
-* [Data Synchronization and Persistence](./sync/index.md)
-* LDLib UI
+* [Data Synchronization and Persistence](./sync/index.md){ data-preview } 
+* [LDLib2 UI](./ui/index.md){ data-preview } 
 * Shaders
 * Model Rendering
 * In-game Editor

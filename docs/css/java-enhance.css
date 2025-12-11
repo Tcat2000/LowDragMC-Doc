@@ -6,8 +6,12 @@
 }
 
 /* Java 注解（@XXX）紫色 */
-.language-java .nd {
-  color: #ffd70d !important;
+[data-md-color-scheme="default"] .language-java .nd {
+  color: #c95f0e !important;
+}
+
+[data-md-color-scheme="slate"] .language-java .nd {
+  color: #e1bb00 !important;
 }
 
 /* 关键字（public class static） */

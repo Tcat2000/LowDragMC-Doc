@@ -2,5 +2,6 @@ title: LDLib2
 nav:
   - index.md
   - java_integration.md
+  - ui
   - sync
   - ...
