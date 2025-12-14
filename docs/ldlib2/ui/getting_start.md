@@ -462,15 +462,7 @@ public class MyContainerMenu extends AbstractContainerMenu {
 
     // register your ui somewhere, e.g. during your mod initialization.
     public static void registerPlayerUI() {
-        PlayerUIMenuType.register(UI_ID, player -> new PlayerUIHolder(){
-            public ResourceLocation getUIId() {
-                return UI_ID;
-            }
-
-            public ModularUI createUI(Player player) {
-                return createModularUI(player)
-            }
-        })
+        PlayerUIMenuType.register(UI_ID, ignored -> player -> createModularUI(player));
     }
     
     public static void openMenuUI(Player player) {
@@ -493,22 +485,64 @@ ModularUI provides full support for `data bindings` and `event dispatch` across 
 This allows UI interactions on the client to safely trigger logic on the server, and server-side state changes to automatically update the UI. 
 Check [data bindings page](./preliminary/data_bindings.md){ data-preview } for more details. 
 
-Here, we focus on practical patterns to help you get started quickly.
+Here, we focus on practical patterns to help you get started quickly. 
 
 ```java
+// represents data on the server
+private final ItemStackHandler itemHandler = new ItemStackHandler(2);
+private final FluidTank fluidTank = new FluidTank(2000);
+private boolean bool = true;
+private String string = "hello";
+private float number = 0.5f;
+
 private static ModularUI createModularUI(Player player) {
+    // create a root element
     var root = new UIElement();
     root.addChildren(
-            new Label().setText("Menu UI"),
-
+            // add a label to display text
+            new Label().setText("Data Between Screen and Menu"),
+            // bind storage to slots
+            new UIElement().addChildren(
+                    new ItemSlot().bind(itemHandler, 0),
+                    new ItemSlot().bind(new ItemHandlerSlot(itemHandler, 1).setCanTake(p -> false)),
+                    new FluidSlot().bind(fluidTank, 0)
+            ).layout(l -> l.gapAll(2).flexDirection(YogaFlexDirection.ROW)),
+            // bind value to the components
+            new UIElement().addChildren(
+                    new Switch().bind(DataBindingBuilder.bool(() -> bool, value -> bool = value).build()),
+                    new TextField().bind(DataBindingBuilder.string(() -> string, value -> string = value).build()),
+                    new Scroller.Horizontal().bind(DataBindingBuilder.floatVal(() -> number, value -> number = value).build()),
+                    // read-only (s->c), always get data from the server and display on the client
+                    new Label().bind(DataBindingBuilder.componentS2C(() -> Component.literal("s->c only: ")
+                            .append(Component.literal(String.valueOf(bool)).withStyle(ChatFormatting.AQUA)).append(" ")
+                            .append(Component.literal(string).withStyle(ChatFormatting.RED)).append(" ")
+                            .append(Component.literal("%.2f".formatted(number)).withStyle(ChatFormatting.YELLOW)))
+                            .build())
+            ).layout(l -> l.gapAll(2)),
+            // trigger ui events on the server side
+            new Button().addServerEventListener(UIEvents.MOUSE_DOWN, e -> {
+                if (fluidTank.getFluid().getFluid() == Fluids.WATER) {
+                    fluidTank.setFluid(new FluidStack(Fluids.LAVA, 1000));
+                } else {
+                    fluidTank.setFluid(new FluidStack(Fluids.WATER, 1000));
+                }
+            }),
+            // you could also use button.setOnServerClick(e -> { ... })
             new InventorySlots()
-    ).addClass("panel_bg");
+    );
+    root.addClass("panel_bg");
 
-    var ui = UI.of(root, StylesheetManager.INSTANCE.getStylesheetSafe(StylesheetManager.MC));
-    return new ModularUI(ui, player);
+    // pass the player to the Modular UI
+    return new ModularUI(UI.of(root, StylesheetManager.INSTANCE.getStylesheetSafe(StylesheetManager.MODERN)), player);
 }
 ```
+
+<figure markdown="span">
+  ![Tutorial 7 Result](./assets/gs_s9.gif){ width="80%" }
+</figure>
 
 ---
 
 ## Ending
+
+This is far from over. Why not give the powerful [UI editor](./ui_editor/index.md){ data-preview } a try?
