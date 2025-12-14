@@ -1,1 +1,1 @@
-# LDLib2 StyleSheet
+# StyleSheet

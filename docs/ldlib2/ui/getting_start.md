@@ -57,13 +57,14 @@ public class MyScreen extends Screen {
 !!! info "Quick Test"
     If you dont want to cope with the code of the `screen` and display. We also provide the `ModularUIScreen` for you. 
     Check [screen and menu page](./preliminary/screen_and_menu.md){ data-preview } for more details.
+
     ```java
-    public void openUI() {
+    public static void openScreenUI() {
         var modularUI = createModularUI();
         minecraft.setScreen(new ModularUIScreen(modularUI, Component.empty()));
     }
     ```
-
+    
 <figure markdown="span">
   ![Tuto 1](./assets/gs_s1.png){ width="80%" }
 </figure>
@@ -450,12 +451,30 @@ public class MyContainerMenu extends AbstractContainerMenu {
 ```
 
 !!! info "Quick Test"
-    If you dont want to cope with the code of the `screen` and display. We also provide the `ModularUIContainerScreen` and `ModularUIContainerMenu` for you. 
-    Check [screen and menu page](./preliminary/screen_and_menu.md){ data-preview } for more details.
+    To use and open a menu-based UI, you need to register your own `MenuType`, LDLib2 also provide the `ModularUIContainerScreen` and `ModularUIContainerMenu` to help you set this up quickly. Check [screen and menu page](./preliminary/screen_and_menu.md){ data-preview } for more details. 
+
+    Alternatively, you can get started even faster by using the provided [factories](./factory.md){ data-preview }.
+    They allow you to create menu-based UIs for blocks, items, or players with minimal setup—without dealing with manual registration or boilerplate code.
+    In this case, we use the `PlayerUIMenuType` for quick demo.
+
     ```java
-    public void openUI() {
-        var modularUI = createModularUI();
-        minecraft.setScreen(new ModularUIScreen(modularUI, Component.empty()));
+    public static final ResourceLocation UI_ID = LDLib2.id("unique_id");
+
+    // register your ui somewhere, e.g. during your mod initialization.
+    public static void registerPlayerUI() {
+        PlayerUIMenuType.register(UI_ID, player -> new PlayerUIHolder(){
+            public ResourceLocation getUIId() {
+                return UI_ID;
+            }
+
+            public ModularUI createUI(Player player) {
+                return createModularUI(player)
+            }
+        })
+    }
+    
+    public static void openMenuUI(Player player) {
+        PlayerUIMenuType.openUI(player, UI_ID);
     }
     ```
 
@@ -463,5 +482,33 @@ public class MyContainerMenu extends AbstractContainerMenu {
   ![Tutorial 6 Result](./assets/gs_s8.gif){ width="80%" }
 </figure>
 
+---
 
+## Tutorial 7: communication between Screen and Menu
 
+While the `InventorySlots` works out of the box, they are pre-packaged built-in components.
+In real projects, you often need more control over how data and events flow between the client-side screen and the server-side menu.
+
+ModularUI provides full support for `data bindings` and `event dispatch` across client and server.
+This allows UI interactions on the client to safely trigger logic on the server, and server-side state changes to automatically update the UI. 
+Check [data bindings page](./preliminary/data_bindings.md){ data-preview } for more details. 
+
+Here, we focus on practical patterns to help you get started quickly.
+
+```java
+private static ModularUI createModularUI(Player player) {
+    var root = new UIElement();
+    root.addChildren(
+            new Label().setText("Menu UI"),
+
+            new InventorySlots()
+    ).addClass("panel_bg");
+
+    var ui = UI.of(root, StylesheetManager.INSTANCE.getStylesheetSafe(StylesheetManager.MC));
+    return new ModularUI(ui, player);
+}
+```
+
+---
+
+## Ending
