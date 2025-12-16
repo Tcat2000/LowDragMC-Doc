@@ -6,8 +6,9 @@ In this section, we will give you some examples step by step.
 ### Tutorial 1: create and display a `ModularUI` in your screen
 
 Let's start with a simple UI.
-A `ModularUI` acts as the runtime manager for your UI — handling lifecycle, rendering, and interactions for all elements you define.
+A `ModularUI` acts as the runtime manager for your UI — handling lifecycle, rendering, and interactions for all elements you define. 
 It takes a `UI` instance and optionally a `Player` as inputs.
+Check [ModularUI page](./preliminary/modularui.md){ data-preview } for more details.
 
 ```java
 private static ModularUI createModularUI() {
@@ -27,7 +28,7 @@ private static ModularUI createModularUI() {
     // create a UI
     var ui = UI.of(root);
     // return a modular UI for runtime instance
-    return new ModularUI(ui);
+    return ModularUI.of(ui);
 }
 ```
 
@@ -99,7 +100,7 @@ private static ModularUI createModularUI() {
     // create a UI
     var ui = UI.of(root);
     // return a modular UI for runtime instance
-    return new ModularUI(ui);
+    return ModularUI.of(ui);
 }
 ```
 
@@ -147,7 +148,7 @@ private static ModularUI createModularUI() {
     // create a UI
     var ui = UI.of(root);
     // return a modular UI for runtime instance
-    return new ModularUI(ui);
+    return ModularUI.of(ui);
 }
 ```
 
@@ -203,7 +204,7 @@ private static ModularUI createModularUI() {
     // create a UI
     var ui = UI.of(root);
     // return a modular UI for runtime instance
-    return new ModularUI(ui);
+    return ModularUI.of(ui);
 }
 ```
 
@@ -244,7 +245,7 @@ In the examples below, we reimplement the layout and style logic from Step 3 usi
         root.lss("padding-all", 7);
         root.lss("gap-all", 5);
         var ui = UI.of(root);
-        return new ModularUI(ui);
+        return ModularUI.of(ui);
     }
     ```
 
@@ -283,7 +284,7 @@ In the examples below, we reimplement the layout and style logic from Step 3 usi
         var stylesheet = Stylesheet.parse(lss);
         // add stylesheets to ui
         var ui = UI.of(root, stylesheet);
-        return new ModularUI(ui);
+        return ModularUI.of(ui);
     }
     ```
 
@@ -327,7 +328,7 @@ private static ModularUI createModularUI() {
     root.addClass("panel_bg");
     // use GDP stylesheets by default
     var ui = UI.of(root, StylesheetManager.INSTANCE.getStylesheetSafe(StylesheetManager.GDP)));
-    return new ModularUI(ui);
+    return ModularUI.of(ui);
 }
 ```
 
@@ -392,7 +393,7 @@ private static ModularUI createModularUI() {
                     .label(label -> label.bindDataSource(SupplierDataSource.of(() -> Component.literal("Progress: ").append(String.valueOf(valueHolder.get())))))
     ).style(style -> style.background(Sprites.BORDER));
     root.layout(layout -> layout.width(100).paddingAll(7).gapAll(5));
-    return new ModularUI(UI.of(root));
+    return ModularUI.of(UI.of(root));
 }
 ```
 
@@ -427,7 +428,7 @@ private static ModularUI createModularUI(Player player) {
 
     var ui = UI.of(root, StylesheetManager.INSTANCE.getStylesheetSafe(StylesheetManager.GDP));
     // pass the player to the Modular UI
-    return new ModularUI(ui, player);
+    return ModularUI.of(ui, player);
 }
 ```
 
@@ -533,7 +534,7 @@ private static ModularUI createModularUI(Player player) {
     root.addClass("panel_bg");
 
     // pass the player to the Modular UI
-    return new ModularUI(UI.of(root, StylesheetManager.INSTANCE.getStylesheetSafe(StylesheetManager.MODERN)), player);
+    return ModularUI.of(UI.of(root, StylesheetManager.INSTANCE.getStylesheetSafe(StylesheetManager.MODERN)), player);
 }
 ```
 
