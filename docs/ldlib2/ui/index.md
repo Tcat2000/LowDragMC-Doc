@@ -10,7 +10,7 @@ If you are struggling with GUI development, LDLib2 is definitely one of your bes
 * stylesheet system
 * massive plug-and-play components
 * in-game UI visual editor
-* kjs support
+* xei / kjs supports
 * completed document and usage examples
 
 ## Let's see what we can do with LDLib2
