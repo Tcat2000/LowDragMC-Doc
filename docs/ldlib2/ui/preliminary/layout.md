@@ -1,5 +1,7 @@
 # Layout
 
+{{ version_badge("2.1.0", label="Since", icon="tag") }}
+
 !!! info inline end
     Grid layout support will be introduced into Yoga in the future.
 
