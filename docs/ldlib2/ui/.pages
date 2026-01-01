@@ -4,6 +4,7 @@ nav:
   - getting_start.md
   - preliminary
   - factory.md
+  - xml.md
   - ui_editor
   - components
   - kjs_support.md

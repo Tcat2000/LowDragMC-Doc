@@ -224,9 +224,9 @@ Drag and drop events are dispatched during drag operations.
 | `dragEnter`        | Fired when the pointer enters an element during a drag operation. | ✅ | ❌ | ❌ |
 | `dragLeave`        | Fired when the pointer leaves an element during a drag operation. | ✅ | ❌ | ❌ |
 | `dragUpdate`       | Fired when the pointer moves over an element during dragging.     | ✅ | ✅ | ❌ |
-| `dragSourceUpdate` | Fired on the drag source while dragging.                          | ❌ | ❌ | ❌ |
+| `dragSourceUpdate` | Fired on the drag source while dragging.                          | ✅ | ❌ | ❌ |
 | `dragPerform`      | Fired when the dragged object is released over an element.        | ✅ | ❌ | ❌ |
-| `dragEnd`          | Fired on the drag source when the drag operation ends.            | ❌ | ❌ | ❌ |
+| `dragEnd`          | Fired on the drag source when the drag operation ends.            | ✅ | ❌ | ❌ |
 
 | Field | Description | Supported Event |
 | ----- | ----------- | --------------- |
